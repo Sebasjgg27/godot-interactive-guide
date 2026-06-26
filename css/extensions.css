@@ -472,3 +472,35 @@ body.modal-open { overflow: hidden; }
 .lint-item { font-family: var(--font-mono); font-size: .8rem; padding: 8px 10px; border-radius: var(--radius); }
 .lint-item.err { color: var(--red); background: rgba(255,123,114,.08); border-left: 3px solid var(--red); }
 .lint-item.warn { color: var(--yellow); background: rgba(227,179,65,.08); border-left: 3px solid var(--yellow); }
+
+/* ============================================================
+   HELLO WORLD TUTORIAL (tutorial.js)
+   ============================================================ */
+.tut-box {
+  width: 100%; max-width: 680px; background: var(--bg-panel);
+  border: 1px solid var(--border-lit); border-radius: var(--radius-lg);
+  padding: 24px 26px; position: relative; max-height: 86vh; overflow-y: auto;
+  box-shadow: 0 18px 60px rgba(0,0,0,.6); animation: cmd-pop .14s ease;
+}
+.tut-box h2 { font-family: var(--font-mono); color: var(--green); font-size: 1.05rem; margin-bottom: 6px; }
+.tut-intro { font-size: .85rem; color: var(--txt-dim); margin-bottom: 12px; }
+.tut-progress { height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.tut-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--cyan)); transition: width .25s ease; }
+.tut-pct { font-family: var(--font-mono); font-size: .7rem; color: var(--txt-muted); text-align: right; margin: 4px 0 14px; }
+.tut-step { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--border); }
+.tut-check {
+  flex: 0 0 auto; width: 26px; height: 26px; border-radius: 6px; cursor: pointer;
+  border: 1px solid var(--border-lit); background: var(--bg-card); color: var(--green);
+  font-family: var(--font-mono); font-size: .9rem;
+}
+.tut-step.done .tut-check { background: rgba(126,202,76,.15); border-color: var(--green); }
+.tut-step.done .tut-t { color: var(--txt-muted); text-decoration: line-through; }
+.tut-t { font-weight: 600; font-size: .92rem; margin-bottom: 4px; }
+.tut-d { font-size: .86rem; color: var(--txt); margin-bottom: 8px; }
+.tut-code { font-size: .82rem; margin: 0 0 8px; }
+.tut-ok {
+  font-size: .8rem; color: var(--txt-dim); background: rgba(126,202,76,.06);
+  border-left: 3px solid var(--green); border-radius: var(--radius); padding: 8px 10px;
+}
+.tut-ok span { color: var(--green); font-weight: 600; }
+.tut-win { margin-top: 16px; text-align: center; font-size: .95rem; color: var(--green); padding: 12px; border: 1px dashed var(--green-dim); border-radius: var(--radius); }
