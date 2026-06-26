@@ -424,3 +424,51 @@ body.modal-open { overflow: hidden; }
   opacity: .8;
 }
 .tree-item.active.visited::after { opacity: 1; }
+
+/* ============================================================
+   GLOSSARY + LINTER (extras.js)
+   ============================================================ */
+.gloss {
+  border-bottom: 1px dotted var(--cyan);
+  cursor: help;
+}
+.gloss:hover, .gloss:focus { color: var(--cyan); outline: none; }
+.gloss-tip {
+  position: absolute;
+  z-index: 700;
+  max-width: 300px;
+  background: var(--bg-panel);
+  border: 1px solid var(--cyan);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: .82rem;
+  line-height: 1.5;
+  color: var(--txt);
+  box-shadow: 0 10px 34px rgba(0,0,0,.55);
+}
+.gloss-tip[hidden] { display: none; }
+
+.lint-box {
+  width: 100%; max-width: 640px; background: var(--bg-panel);
+  border: 1px solid var(--border-lit); border-radius: var(--radius-lg);
+  padding: 24px 26px; position: relative; max-height: 84vh; overflow-y: auto;
+  box-shadow: 0 18px 60px rgba(0,0,0,.6); animation: cmd-pop .14s ease;
+}
+.lint-box h2 { font-family: var(--font-mono); color: var(--cyan); font-size: 1.05rem; margin-bottom: 8px; }
+.lint-note { font-size: .82rem; color: var(--txt-muted); margin-bottom: 12px; }
+#lint-input {
+  width: 100%; min-height: 180px; resize: vertical;
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--txt); font-family: var(--font-mono); font-size: .85rem; padding: 12px; line-height: 1.6;
+}
+.lint-actions { display: flex; gap: 8px; margin: 12px 0; }
+.lint-actions button {
+  font-family: var(--font-mono); font-size: .82rem; cursor: pointer;
+  background: var(--green-dim); color: #fff; border: none; border-radius: var(--radius); padding: 8px 16px;
+}
+.lint-actions button.ghost { background: var(--bg-card); color: var(--txt-dim); border: 1px solid var(--border); }
+.lint-out { display: flex; flex-direction: column; gap: 6px; }
+.lint-ok { color: var(--green); font-size: .88rem; padding: 8px 0; }
+.lint-item { font-family: var(--font-mono); font-size: .8rem; padding: 8px 10px; border-radius: var(--radius); }
+.lint-item.err { color: var(--red); background: rgba(255,123,114,.08); border-left: 3px solid var(--red); }
+.lint-item.warn { color: var(--yellow); background: rgba(227,179,65,.08); border-left: 3px solid var(--yellow); }
